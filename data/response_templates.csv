@@ -1,0 +1,30 @@
+intent,template
+greet,Hello! How can I help with your stay at {hotel_name}?
+goodbye,Goodbye! Have a wonderful day.
+thanks,You're welcome!
+inquire_availability,We can check availability from {check_in} to {check_out} for {guests_total} guests.
+inquire_price,The {room_type} starts at ${price} + taxes for {check_in}.
+inquire_room_type,"We offer Standard, Deluxe, Family Suite, and Ocean Suite."
+inquire_amenities,"Yes, we have {amenity}."
+inquire_cancellation_policy,"Free cancellation until 48h before check-in. After that, first night charged."
+inquire_checkin_time,Check-in is from 15:00.
+inquire_checkout_time,Check-out is until 11:00.
+inquire_parking,On-site self-parking $20/night
+inquire_pet_policy,Pets allowed up to 25 lbs; $50 cleaning fee
+make_reservation,I can book a {room_type} for {adults} adults {children_txt} from {check_in} to {check_out}. Shall I proceed?
+change_dates,I've noted the new dates {check_in} to {check_out}.
+change_room_type,I've updated the room type to {room_type}.
+change_guest_count,Guest count updated to {guests_total}.
+cancel_reservation,I've requested cancellation for reservation {reservation_id}.
+confirm,Confirmed. Your booking is secured.
+deny,No problem. I've canceled the request.
+request_late_checkout,Late checkout is subject to availability; we can note 1pm.
+request_early_checkin,Early check-in is subject to availability; we will do our best.
+request_invoice,"Sure, we'll send a detailed invoice to your email."
+complaint_noise,I'm sorry about the noise. I'll notify our team immediately.
+complaint_cleanliness,I'm sorry for this. Housekeeping will attend promptly.
+complaint_billing,I'll escalate the billing issue to our front desk.
+feedback_positive,Thank you for the kind feedback!
+feedback_negative,I'm sorry to hear that. We'll work to improve.
+inquire_identity,"I'm a hotel reservation assistant for {hotel_name}. I can help with room bookings, availability, pricing, amenities, and hotel policies. What would you like to know?"
+unknown,"I'm a hotel reservation assistant. I can help with room bookings, availability, pricing, amenities, and hotel policies. Could you ask something related to your stay?"

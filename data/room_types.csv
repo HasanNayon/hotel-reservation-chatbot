@@ -1,0 +1,5 @@
+hotel_id,code,name,beds,max_adults,max_children,size_sqm,view_options,amenities,base_price_weekday,base_price_weekend
+HTL001,STD,Standard Room,1 Queen,2,1,22,"city,courtyard","wifi,tv,desk,ac",129,149
+HTL001,DLX,Deluxe Room,1 King or 2 Twins,3,1,28,"partial ocean,city","wifi,tv,desk,mini-bar,ac",169,189
+HTL001,FAM,Family Suite,1 King + Sofa Bed,4,2,40,"city,courtyard","wifi,tv,desk,mini-bar,kitchenette,ac",219,239
+HTL001,STE,Ocean Suite,1 King,2,1,55,ocean,"wifi,tv,desk,mini-bar,balcony,espresso,ac",299,349
