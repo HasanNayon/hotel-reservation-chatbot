@@ -2,6 +2,13 @@
 
 A self-contained, non-LLM hotel reservation assistant trained on the synthetic dataset in `data/`. It classifies user intents with a traditional ML model, extracts structured entities with rules, and renders responses via deterministic templates.
 
+## UI Screenshots
+<p align="center">
+  <img src="image/ui_1.png" width="30%" alt="Chatbot UI 1">
+  <img src="image/ui_2.png" width="30%" alt="Chatbot UI 2">
+  <img src="image/ui_3.png" width="30%" alt="Chatbot UI 3">
+</p>
+
 ## Architecture at a Glance
 - **Intent classification**: `scikit-learn` TF-IDF + Logistic Regression pipeline trained on `data/training_data.csv`.
 - **Entity extraction**: Rule-based parser in `bot/entity_extractor.py` detects dates, guest counts, reservation IDs, room types, and amenities.
@@ -11,14 +18,27 @@ A self-contained, non-LLM hotel reservation assistant trained on the synthetic d
 
 ## Setup
 ```powershell
-cd d:\dataset\hotel_bot
-D:/dataset/.venv/Scripts/python.exe -m pip install --upgrade pip
-D:/dataset/.venv/Scripts/python.exe -m pip install -r requirements.txt
+# Create a virtual environment
+python -m venv .venv
+
+# Activate the virtual environment
+# Windows:
+.\.venv\Scripts\Activate.ps1
+# Linux/Mac:
+# source .venv/bin/activate
+
+# Install dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 ## Train & Run the Bot
 ```powershell
-D:/dataset/.venv/Scripts/python.exe run_chatbot.py
+# Run the CLI chatbot
+python run_chatbot.py
+
+# Run the Streamlit Web UI
+streamlit run app.py
 ```
 - The script trains a fresh intent model (≈10s) and launches an interactive prompt.
 - Use `--no-train` to reuse the last saved model in `artifacts/`.
@@ -34,7 +54,7 @@ Returns top intents plus extracted entities for debugging.
 
 ## Tests
 ```powershell
-D:/dataset/.venv/Scripts/python.exe -m unittest discover -s tests
+python -m unittest discover -s tests
 ```
 
 ## Customization Tips
