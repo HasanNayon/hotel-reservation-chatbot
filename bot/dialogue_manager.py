@@ -32,13 +32,6 @@ class DialogueManager:
         try:
             response = template.format(**response_context)
             
-            # Add context reminder for booking-related intents if partial info exists
-            if intent in ["inquire_availability", "inquire_price", "make_reservation"]:
-                if self.context.has_partial_booking():
-                    context_summary = self._format_remembered_context()
-                    if context_summary:
-                        response += f"\n\n📝 I remember: {context_summary}"
-            
             return response
         except KeyError:
             # Missing placeholder -> fall back to default response
