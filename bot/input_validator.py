@@ -64,6 +64,9 @@ class InputValidator:
             "you", "your", "who", "name", "about", "information",
         }
         
+        # Common short greetings to allow
+        self.allowed_short_words = {"hi", "ok", "no"}
+        
         # Patterns that indicate gibberish
         self.gibberish_patterns = [
             r'^[a-z]{1,2}$',  # Single or two random letters
@@ -93,10 +96,13 @@ class InputValidator:
         if len(text_clean) < 2:
             return False, "Please ask a complete question. I'm here to help with hotel reservations, room information, amenities, and policies.", {"reason": "too_short"}
         
-        # Check for gibberish patterns
-        for pattern in self.gibberish_patterns:
-            if re.match(pattern, text_clean):
-                return False, "That doesn't seem like a valid question. Please ask about hotel reservations, room availability, pricing, or our services.", {"reason": "gibberish_pattern"}
+        # Check for gibberish patterns (but allow common short words)
+        if text_clean not in self.allowed_short_words:
+            for pattern in self.gibberish_patterns:
+                if re.match(pattern, text_clean):
+                    # Allow if it's in domain keywords or question words
+                    if text_clean not in self.domain_keywords and text_clean not in self.question_words:
+                        return False, "That doesn't seem like a valid question. Please ask about hotel reservations, room availability, pricing, or our services.", {"reason": "gibberish_pattern"}
         
         # Check if it's just repeated words
         words = text_clean.split()
